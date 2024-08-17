@@ -1,0 +1,86 @@
+ mat-sidenav {
+    margin: 16px;
+    width: 200px;
+    border-right: none;
+    background: #cccccc7a;
+    color: white;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .content {
+    height: calc(100vh - 130px);
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+
+    padding: 16px;
+
+    overflow: auto;
+  }
+
+  mat-sidenav-container {
+    height: calc(100vh - 65px);
+  }
+
+  .menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+
+    mat-icon {
+      margin-right: 8px;
+    }
+  }
+
+  .avatar {
+    margin-top: 16px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .name {
+    margin-top: 8px;
+    margin-bottom: 0px !important;
+    font-weight: bold;
+    color: black;
+  }
+
+  .designation {
+    margin-top: 2px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: black;
+  }
+
+  mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-toolbar{
+    color: white;
+}
+
+  .active{
+    background: rgba(223, 189, 189, 0.596);
+    color: black;
+  }
+
+  .custom-divider {
+    background-color: black;
+  }
+
+  .button-margin{
+    margin-left: 5px;
+    margin-right: 5px;
+  }

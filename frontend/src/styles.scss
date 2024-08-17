@@ -1,0 +1,19 @@
+@import 'quill/dist/quill.snow.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.mat-chip-option-disabled {
+    background-color:lightgreen !important;
+    // color: white !important;
+    opacity: 1 !important;
+    text-align: center !important;
+  }
+
+  .mat-chip-option-disabled-false{
+    background-color:#FFCCCB !important;
+    // color: white !important;
+    opacity: 1 !important;
+  }
+

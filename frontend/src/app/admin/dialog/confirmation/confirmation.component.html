@@ -1,0 +1,10 @@
+
+<mat-dialog-content>
+   <h2>Are you sure want to {{details.message}}</h2>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-raised-button [color]="themeService.getTheme()" (click)="handleChangeAction()" >Yes</button>
+    <button mat-raised-button [color]="themeService.getTheme()"  mat-dialog-close >No</button>
+
+</mat-dialog-actions>

@@ -1,0 +1,43 @@
+<body>
+   <div class="login-container">
+      <div class="logo">
+        <mat-icon class="mat-18">lock</mat-icon>
+      </div>
+
+
+   <div style="text-align: center !important; margin-bottom: 5px;">
+    NoteNexus
+  </div>
+  <form [formGroup]="loginForm">
+
+      <div fxflex fxLayout="column">
+        <mat-form-field  [color]="themeService.getTheme()" >
+          <input matInput placeholder="email" formControlName="email" required>
+          <mat-error *ngIf="loginForm.controls['email'].hasError('required')">
+            Email is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field  [color]="themeService.getTheme()">
+          <input matInput placeholder="Password" formControlName="password" type="password" required>
+          <mat-error *ngIf="loginForm.controls['password'].hasError('required')">
+            Password is required
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button [disabled]="!loginForm.valid"  [color]="themeService.getTheme()" (click)="handlesubmit()">Login</button>
+
+      </div>
+  </form>
+
+ <div class="home-link">
+  <span (click)="onBack() "><span style="color: blue; cursor: pointer;">Back</span></span>
+ </div>
+
+
+
+</div>
+
+
+
+</body>

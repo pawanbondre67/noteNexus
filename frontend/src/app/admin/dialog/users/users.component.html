@@ -1,0 +1,63 @@
+   <mat-toolbar [color]="themeService.getTheme()">
+        <mat-toolbar-row fxLayout="row">
+            <span class="title-center">{{dialogData.action}} User</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+
+    <mat-dialog-content>
+      <form [formGroup]="usersForm">
+        <div fxFlex fxLayout="column">
+
+
+          <div fxLayout="row wrap">
+            <mat-form-field appearance="fill" fxFlex [color]="themeService.getTheme()">
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="name" required>
+              <mat-error *ngIf="usersForm.controls.name.touched && usersForm.controls.name.invalid">
+                <span *ngIf="usersForm.controls.name.errors.required"> This field is required</span>
+                <span *ngIf="usersForm.controls.name.errors.pattern"> This field is invalid</span>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row wrap">
+            <mat-form-field appearance="fill" fxFlex [color]="themeService.getTheme()">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" required>
+              <mat-error *ngIf="usersForm.controls.email.touched && usersForm.controls.email.invalid">
+                <span *ngIf="usersForm.controls.email.errors.required"> This field is required</span>
+                <span *ngIf="usersForm.controls.email.errors.pattern"> This field is invalid</span>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+
+          <div *ngIf="dialogData.action === 'Add' ">
+            <div fxLayout="row wrap">
+              <mat-form-field appearance="fill" fxFlex [color]="themeService.getTheme()">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" required>
+                <mat-error *ngIf="usersForm.controls.password.touched && usersForm.controls.password.invalid">
+                  <span *ngIf="usersForm.controls.password.errors.required"> This field is required</span>
+                  <span *ngIf="usersForm.controls.password.errors.pattern"> This field is invalid</span>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+
+        </div>
+
+      </form>
+    </mat-dialog-content>
+
+
+    <mat-dialog-actions align="center">
+        <button mat-raised-button [color]="themeService.getTheme()" type="submit" (click)="handleSubmit()"
+        matDialogClose  [disabled]="!(usersForm.valid && usersForm.dirty)">{{action}}</button>
+
+        <button mat-raised-button [color]="themeService.getTheme()" mat-dialog-close="">Close</button>
+
+    </mat-dialog-actions>
+

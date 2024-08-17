@@ -1,0 +1,79 @@
+<mat-toolbar  [color]="themeService.getTheme()">
+
+  <button mat-raised-button   *ngIf="sidenav.mode === 'side'"  (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+      <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+  </button>
+
+  <span [routerLink]="['/home']"  style="cursor: pointer;" >NoteNexus</span>
+  <span class="spacer"> </span>
+  <button   mat-icon-button  [matMenuTriggerFor]="menu">
+     <mat-icon class="mat-18">palette</mat-icon>
+  </button>
+
+
+  <mat-menu #menu="matMenu">
+     <button mat-mini-fab  color="primary" class="button-margin" (click)="changeTheme('primary')">
+         <mat-icon *ngIf="themeService.getTheme() === 'primary'" >done</mat-icon>
+     </button>
+
+      <button mat-mini-fab  color="accent" class="button-margin" (click)="changeTheme('accent')">
+          <mat-icon *ngIf="themeService.getTheme() === 'accent'" >done</mat-icon>
+      </button>
+
+      <button mat-mini-fab  color="warn" class="button-margin" (click)="changeTheme('warn')">
+          <mat-icon *ngIf="themeService.getTheme() === 'warn'" >done</mat-icon>
+      </button>
+  </mat-menu>
+
+     <button mat-icon-button (click)="logout()">
+      <mat-icon class="mat-18">exit_to_app</mat-icon>
+     </button>
+</mat-toolbar>
+
+
+
+<mat-sidenav-container>
+
+      <mat-sidenav #sidenav="matSidenav" opened='true' mode="side" align="start" >
+
+        <img src="" alt=""  class="avatar mat-elevation-z8">
+
+        <mat-divider class="custom-divider"></mat-divider>
+
+        <button mat-button class="menu-button" [color]="themeService.getTheme()"  routerLinkActive="active" routerLink="/notenexus/dashboard" >
+          <mat-icon>home</mat-icon>
+          <span>Dashboard</span>
+        </button>
+
+        <button mat-button class="menu-button" [color]="themeService.getTheme()"  routerLinkActive="active" routerLink="/notenexus/users" >
+          <mat-icon>group</mat-icon>
+          <span>Users</span>
+        </button>
+
+        <button mat-button class="menu-button" [color]="themeService.getTheme()"  routerLinkActive="active" routerLink="/notenexus/category" >
+          <mat-icon>apartment</mat-icon>
+          <span>Category</span>
+        </button>
+
+        <button mat-button class="menu-button" [color]="themeService.getTheme()"  routerLinkActive="active" routerLink="/notenexus/article" >
+          <mat-icon>storage</mat-icon>
+          <span>Article</span>
+        </button>
+
+
+        <mat-divider class="custom-divider"></mat-divider>
+
+        <button mat-button class="menu-button" [color]="themeService.getTheme()"  routerLinkActive="active" routerLink="/notenexus/help" >
+          <mat-icon>help</mat-icon>
+          <span>Help</span>
+        </button>
+
+      </mat-sidenav>
+      <!-- Body -->
+    <mat-sidenav-content >
+        <div class="content mat-elevation-z8" style="background-color: rgba(145, 125, 125, 0.219);">
+          <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
