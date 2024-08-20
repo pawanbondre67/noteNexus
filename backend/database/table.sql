@@ -9,7 +9,7 @@ create table users (
     UNIQUE(email)
 );
 
-insert into users (name, email, password, status, isDeletable) values ('pawan', 'pawamn@gmail.com', 'user', 'true', 'false');
+insert into users (name, email, password, status, isDeletable) values ('pawan', 'pawanbondre19@gmail.com', 'admin', 'true', 'false');
 
 
 create table category (
