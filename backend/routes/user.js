@@ -19,6 +19,8 @@ router.post('/addNewUser', authenticateToken, (req, res) => {
         if (!err) {
             if (result.length <=0) {
 
+                console.log('new user data response', user);
+
                 query = "insert into users (name,email,password,status,isDeletable) values (?,?,?,'false','true')"; 
                 db.query(query, [user.name, user.email, user.password], (err, result) => {
                     if (!err) {
@@ -56,6 +58,8 @@ router.post('/login', (req, res) => {
 
     db.query(query, [user.email], (err, result) => {
         if (!err) {
+
+            console.log('login response data',result);
             if (result.length <= 0 || result[0].password != user.password) {
                 return res.status(400).json({
                     message: 'Invalid email or password'

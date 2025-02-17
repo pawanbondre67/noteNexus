@@ -25,5 +25,4 @@ content longtext not null,
 categoryId int not null,
 published_date date ,
 status varchar(20)
-
 );
